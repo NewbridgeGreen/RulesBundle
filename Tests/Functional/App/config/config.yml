@@ -1,0 +1,44 @@
+framework:
+    router:          { resource: "%kernel.root_dir%/config/routing.yml" }
+    profiler:        { only_exceptions: false }
+    test:             ~
+    secret:          d0c2f6bb2c9e532bd95a36fede828c3db0cb04bc
+    form:            false
+    csrf_protection: false
+    validation:      { enable_annotations: true }
+    templating:      { engines: ['php'] }
+    default_locale:  en
+    session:
+        storage_id: session.storage.filesystem
+
+monolog:
+    handlers:
+        main:
+            type:         fingers_crossed
+            action_level: error
+            handler:      nested
+        nested:
+            type:  stream
+            path:  %kernel.logs_dir%/%kernel.environment%.log
+            level: debug
+
+# Doctrine ODM Configuration
+doctrine_mongodb:
+    connections:
+        default:
+            server: mongodb://localhost:27017
+            options:
+              connect: true
+
+    default_database: rules_test
+    document_managers:
+            default:
+                auto_mapping: true
+
+    auto_generate_hydrator_classes: true
+    auto_generate_proxy_classes: true
+
+# RulesBundle configuration
+newbridge_green_rules:
+    rule_manager:
+        default_database: rules_test

@@ -1,0 +1,20 @@
+NewbridgeGreen\RulesBundle\Document\Condition:
+  type: embeddedDocument
+  fields:
+    target:
+      type: string
+      name: target
+      fieldName: targetClassName
+
+    property:
+      type: string
+
+    comparator:
+      type: string
+      name: comparator
+      fieldName: comparatorClassName
+
+    expected:
+      type: hash
+
+

@@ -1,0 +1,24 @@
+NewbridgeGreen\RulesBundle\Document\Rule:
+  type: document
+  collection: rules
+
+  fields:
+    id:
+      type: id
+      id: true
+
+    active:
+      type: boolean
+
+    readOnly:
+      type: boolean
+
+    target:
+      type: string
+
+  embedMany:
+    conditions:
+      targetDocument: NewbridgeGreen\RulesBundle\Document\Condition
+
+    actions:
+      targetDocument: NewbridgeGreen\RulesBundle\Document\Action

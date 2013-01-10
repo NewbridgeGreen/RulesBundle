@@ -1,0 +1,11 @@
+NewbridgeGreen\RulesBundle\Document\Action:
+  type: embeddedDocument
+  fields:
+    class:
+      type: string
+      name: class
+      fieldName: className
+
+    data:
+      type: hash
+
