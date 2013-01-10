@@ -38,7 +38,7 @@ class Condition
 
     /**
      * @var mixed
-     * @MongoDB\Hash
+     * @MongoDB\string
      */
     protected $expected;
 

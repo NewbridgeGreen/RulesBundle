@@ -62,6 +62,39 @@ class RulesMongoDBTest extends FunctionalTestCase
         $this->assertFalse($result);
     }
 
+    public function testAgeEqualsRule()
+    {
+        $rule = new Rule();
+        $employee = new Employee();
+        $employee->setAge(29);
+
+        $rule->setTarget($employee);
+
+        $condition = new Condition;
+        $condition->setProperty('age')
+            ->setComparator(new Equals(29));
+
+        $rule->addCondition($condition);
+
+        $action = new Action;
+        $action->setClass(new CreateTask(array('name' => 'Test')));
+
+        $rule->addAction($action);
+
+        static::$rm->save($rule);
+
+        $result = static::$rm->evaluate($employee);
+
+        $this->assertTrue($result);
+        $this->assertEquals(1, $employee->getTasks()->count());
+
+        $document = new Document;
+
+        $result = static::$rm->evaluate($document);
+
+        $this->assertFalse($result);
+    }
+
     public function testSaveIncorrectRule()
     {
         $rule = new Rule();

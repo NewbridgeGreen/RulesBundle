@@ -28,6 +28,8 @@ class Employee
     /** @var ArrayCollection */
     protected $rules;
 
+    protected $age;
+
     public function __construct()
     {
         $this->documents = new ArrayCollection;
@@ -141,5 +143,15 @@ class Employee
     public function addRule(Rule $rule)
     {
         $this->rules->add($rule);
+    }
+
+    public function setAge($age)
+    {
+        $this->age = $age;
+    }
+
+    public function getAge()
+    {
+        return $this->age;
     }
 }
