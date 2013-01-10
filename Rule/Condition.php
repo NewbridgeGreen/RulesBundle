@@ -19,12 +19,10 @@ class Condition
      */
     protected $target;
 
-    /** @MongoDB\Field(type="string", name="target") */
     protected $targetClassName;
 
     /**
      * @var string
-     * @MongoDB\String
      */
     protected $property;
 
@@ -33,12 +31,10 @@ class Condition
      */
     protected $comparator;
 
-    /** @MongoDB\Field(type="string", name="comparator") */
     protected $comparatorClassName;
 
     /**
      * @var mixed
-     * @MongoDB\string
      */
     protected $expected;
 

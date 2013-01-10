@@ -17,19 +17,16 @@ class Rule
 
     /**
      * @var bool State boolean to see if this rule is active or not
-     * @MongoDB\Id
      */
     protected $id;
 
     /**
      * @var bool
-     * @MongoDB\Boolean
      */
     protected $active = true;
 
     /**
      * @var bool
-     * @MongoDB\Boolean
      */
     protected $readOnly = true;
 
@@ -40,25 +37,21 @@ class Rule
 
     /**
      * @var String The full class name we want to apply this rule to
-     * @MongoDB\String
      */
     protected $targetClassName;
 
     /**
      * @var Rule[] Which rules does this one override
-     * @MongoDB\ReferenceMany(targetDocument="Rule")
      */
     protected $overrides;
 
     /**
      * @var Condition[] A collection of conditions to be checked for this rule to hold true
-     * @MongoDB\EmbedMany(targetDocument="Condition")
      */
     protected $conditions;
 
     /**
      * @var Action[] A collection of actions to perform when the conditions are met
-     * @MongoDB\EmbedMany(targetDocument="Action")
      */
     protected $actions;
 

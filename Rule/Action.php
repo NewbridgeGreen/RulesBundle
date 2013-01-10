@@ -28,7 +28,6 @@ class Action
 
     /**
      * @param string $class
-     * @MongoDB\String
      */
     public function setClass($class)
     {

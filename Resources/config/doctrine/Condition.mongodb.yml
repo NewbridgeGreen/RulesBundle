@@ -15,6 +15,6 @@ NewbridgeGreen\RulesBundle\Document\Condition:
       fieldName: comparatorClassName
 
     expected:
-      type: hash
+      type: string
 
 
