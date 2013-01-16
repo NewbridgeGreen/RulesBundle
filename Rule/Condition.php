@@ -40,18 +40,17 @@ class Condition
 
     public function __construct($config = null)
     {
-        if (isset($config['comparator'])) {
-            $this->setComparator($config['comparator']);
+        if (isset($config['property'])) {
+            $this->setProperty($config['property']);
         }
 
         if (isset($config['expected'])) {
             $this->setExpected($config['expected']);
         }
 
-        if (isset($config['property'])) {
-            $this->setExpected($config['property']);
+        if (isset($config['comparator'])) {
+            $this->setComparator($config['comparator']);
         }
-
     }
 
     /**
