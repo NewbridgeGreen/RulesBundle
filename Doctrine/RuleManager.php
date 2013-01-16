@@ -14,6 +14,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\Collections\ArrayCollection;
 
 use NewbridgeGreen\RulesBundle\Document\Rule;
+use NewbridgeGreen\RulesBundle\Comparator\Comparable;
 
 class RuleManager
 {
@@ -81,4 +82,5 @@ class RuleManager
 
         return $result;
     }
+
 }

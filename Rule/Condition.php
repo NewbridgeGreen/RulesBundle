@@ -38,12 +38,21 @@ class Condition
      */
     protected $expected;
 
-    /*public function __construct($config = null)
+    public function __construct($config = null)
     {
-        if ($config['com'])
-        $this->setComparator($comparator);
-        $this->setExpected($expected);
-    } */
+        if (isset($config['comparator'])) {
+            $this->setComparator($config['comparator']);
+        }
+
+        if (isset($config['expected'])) {
+            $this->setExpected($config['expected']);
+        }
+
+        if (isset($config['property'])) {
+            $this->setExpected($config['property']);
+        }
+
+    }
 
     /**
      * @param $comparator

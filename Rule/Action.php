@@ -26,6 +26,19 @@ class Action
     /** @var mixed Data to be sent to the action */
     protected $data;
 
+    public function __construct(array $config = array()) {
+        if (isset($config['class_name'])) {
+            $this->setClassName($config['class_name']);
+        }
+
+        if (isset($config['data'])) {
+            $this->setData($config['data']);
+        }
+
+        if (isset($config['class'])) {
+            $this->setClass($config['class']);
+        }
+    }
     /**
      * @param string $class
      */
