@@ -83,4 +83,8 @@ class RuleManager
         return $result;
     }
 
+    public function create(array $data = array())
+    {
+        $rule = new \Rule();
+    }
 }

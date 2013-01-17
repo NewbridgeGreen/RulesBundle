@@ -43,6 +43,13 @@ class RuleManagerMongoDBTest extends \PHPUnit_Framework_TestCase
         $this->ruleManager->save($rule);
     }
 
+
+    /** @dataProvider arrayRuleProvider */
+    public function testRuleCreation($data)
+    {
+        $this->ruleManager->create
+    }
+
     protected function getOptions()
     {
         return array(
@@ -53,5 +60,24 @@ class RuleManagerMongoDBTest extends \PHPUnit_Framework_TestCase
     protected function createRuleManager($om)
     {
         return new RuleManager($om);
+    }
+
+    public function arrayRuleProvider()
+    {
+        return array(
+            'name' => 'Test',
+            'target' => 'NewbridgeGreen\RulesBundle\Tests\Fixtures\Employee',
+            'conditions' => array(
+                'property' => 'active',
+                'comparator' => 'NewbridgeGreen\RulesBundle\Comparator\Equals',
+                'expected' => true
+            ),
+            'actions' => array(
+                'class' => 'NewbridgeGreen\RulesBundle\Action\CreateTask',
+                'data' => array(
+                    'title' => 'New Task'
+                )
+            )
+        );
     }
 }

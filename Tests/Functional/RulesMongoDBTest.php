@@ -114,4 +114,5 @@ class RulesMongoDBTest extends FunctionalTestCase
 
         $this->assertFalse($result);
     }
+
 }

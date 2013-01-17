@@ -61,9 +61,9 @@ class Condition
     {
         if (is_object($comparator)) {
             $this->comparatorClassName = get_class($comparator);
+            $this->expected = $comparator->getExpected();
         }
         $this->comparator = $comparator;
-        $this->expected = $comparator->getExpected();
         return $this;
     }
 
