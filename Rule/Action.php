@@ -23,7 +23,9 @@ class Action
      */
     protected $className;
 
-    /** @var mixed Data to be sent to the action */
+    /**
+     * @var mixed Data to be sent to the action
+     */
     protected $data;
 
     public function __construct(array $config = array()) {
@@ -62,6 +64,12 @@ class Action
     public function getClassName()
     {
         return $this->className;
+    }
+
+    public function setClassName($className)
+    {
+        $this->className = $className;
+        return $this;
     }
 
     /**
