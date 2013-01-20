@@ -47,7 +47,7 @@ class RuleManagerMongoDBTest extends \PHPUnit_Framework_TestCase
     /** @dataProvider arrayRuleProvider */
     public function testRuleCreation($data)
     {
-        $this->ruleManager->create
+
     }
 
     protected function getOptions()
