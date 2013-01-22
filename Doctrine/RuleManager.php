@@ -68,7 +68,10 @@ class RuleManager
 
     public function findRules($target)
     {
-        return $this->om->getRepository($this->ruleDocument)->findByTarget(get_class($target));
+        if (!$this->rules) {
+            $this->rules = $this->om->getRepository($this->ruleDocument)->findByTarget(get_class($target));
+        }
+        return $this->rules;
     }
 
     public function evaluate($object)
