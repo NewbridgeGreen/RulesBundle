@@ -31,8 +31,6 @@ class RuleManager
         if ($document) {
             $this->ruleDocument = $document;
         }
-        $this->rules = new ArrayCollection;
-
     }
 
     public function getRules($target)
