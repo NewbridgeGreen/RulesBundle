@@ -14,6 +14,8 @@ use NewbridgeGreen\RulesBundle\Comparator\Equals;
 use NewbridgeGreen\RulesBundle\Tests\Fixture\Employee;
 use NewbridgeGreen\RulesBundle\Tests\Fixture\Document;
 
+use Doctrine\MongoDB\Util\InvalidArgumentException;
+
 class RulesMongoDBTest extends FunctionalTestCase
 {
 
@@ -25,9 +27,9 @@ class RulesMongoDBTest extends FunctionalTestCase
     {
         parent::setUp();
         \PHPUnit_Framework_Error_Notice::$enabled = FALSE;
-        if (!class_exists('Doctrine\MongoDB\Connection')) {
+        //if (!class_exists('Doctrine\MongoDB\Connection')) {
             $this->markTestSkipped('Doctrine2 MongoDB is required for this test');
-        }
+        //}
     }
 
     public function testSaveNewRule()

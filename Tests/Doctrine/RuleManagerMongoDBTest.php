@@ -43,13 +43,6 @@ class RuleManagerMongoDBTest extends \PHPUnit_Framework_TestCase
         $this->ruleManager->save($rule);
     }
 
-
-    /** @dataProvider arrayRuleProvider */
-    public function testRuleCreation($data)
-    {
-
-    }
-
     protected function getOptions()
     {
         return array(

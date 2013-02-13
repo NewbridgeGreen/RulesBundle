@@ -9,6 +9,6 @@ class Contains extends AbstractComparator
 {
     public function compare($actual)
     {
-        return preg_match('/^'.$this->expected.'/i', $actual);
+        return (boolean) preg_match('/'.preg_quote($this->expected, '/').'/i', $actual);
     }
 }
